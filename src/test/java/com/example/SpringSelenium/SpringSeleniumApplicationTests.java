@@ -26,13 +26,13 @@ class SpringSeleniumApplicationTests {
 
 	@Test
 	void contextLoads() {
-		user.printDetails();
-		System.out.println(this.path);
-		System.out.println(this.fruits);
-		System.out.println(this.username);
-
-		Faker faker = new Faker();
-		System.out.println(faker.name().firstName());
+//		user.printDetails();
+//		System.out.println(this.path);
+//		System.out.println(this.fruits);
+//		System.out.println(this.username);
+//
+//		Faker faker = new Faker();
+//		System.out.println(faker.name().firstName());
 
 		this.tv.playMovie();
 	}
