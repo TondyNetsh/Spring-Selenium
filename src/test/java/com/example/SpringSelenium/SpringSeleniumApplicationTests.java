@@ -12,6 +12,8 @@ import java.util.List;
 class SpringSeleniumApplicationTests {
 	@Autowired
 	private User user;
+	@Autowired
+	private Television tv;
 
 	@Value("${TEST_URL:https://www.google.co.za}")
 	private String path;
@@ -31,6 +33,8 @@ class SpringSeleniumApplicationTests {
 
 		Faker faker = new Faker();
 		System.out.println(faker.name().firstName());
+
+		this.tv.playMovie();
 	}
 
 	/*
