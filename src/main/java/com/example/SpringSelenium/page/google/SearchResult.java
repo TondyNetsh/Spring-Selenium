@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 public class SearchResult extends Base {
-    @FindBy(css = "div#rcnt")
+    @FindBy(css = "div.jtfYYd")
     private List<WebElement> results;
 
     public int getCount() {
