@@ -10,31 +10,22 @@ import java.util.List;
 
 @SpringBootTest
 class SpringSeleniumApplicationTests {
-	@Autowired
-	private User user;
-	@Autowired
-	private Television tv;
-
-	@Value("${TEST_URL:https://www.google.co.za}")
-	private String path;
-
-	@Value("${fruits}")
-	private List<String> fruits;
-
-	@Value("${myusername}")
-	private String username;
+//	@Autowired
+//	private User user;
+//	@Autowired
+//	private Television tv;
+//
+//	@Value("${TEST_URL:https://www.google.co.za}")
+//	private String path;
+//
+//	@Value("${fruits}")
+//	private List<String> fruits;
+//
+//	@Value("${myusername}")
+//	private String username;
 
 	@Test
 	void contextLoads() {
-//		user.printDetails();
-//		System.out.println(this.path);
-//		System.out.println(this.fruits);
-//		System.out.println(this.username);
-//
-//		Faker faker = new Faker();
-//		System.out.println(faker.name().firstName());
-
-		this.tv.playMovie();
 	}
 
 	/*

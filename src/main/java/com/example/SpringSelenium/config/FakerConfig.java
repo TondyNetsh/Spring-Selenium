@@ -10,5 +10,4 @@ public class FakerConfig {
     public Faker getFaker() {
         return new Faker();
     }
-
 }
