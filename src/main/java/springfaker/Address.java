@@ -1,4 +1,4 @@
-package com.example.SpringSelenium;
+package springfaker;
 
 import com.github.javafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
