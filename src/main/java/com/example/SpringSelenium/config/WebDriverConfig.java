@@ -18,18 +18,19 @@ public class WebDriverConfig {
     @Value("${default.timeout:30}")
     private int timeout;
 
-    @Bean
-    @ConditionalOnProperty(name = "browser", havingValue = "chrome")
-    public WebDriver chromeDriver() {
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
-    }
 
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefox() {
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
+    }
+
+    @Bean
+    @ConditionalOnProperty(name = "browser", havingValue = "chrome")
+    public WebDriver chromeDriver() {
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver();
     }
 
     @Bean
