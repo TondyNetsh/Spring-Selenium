@@ -12,7 +12,11 @@ public class SearchResult extends Base {
     @FindBy(css = "div.jtfYYd")
     private List<WebElement> results;
 
-    public int getCount() {
+    public int
+
+
+
+    getCount() {
         return this.results.size();
     }
 
