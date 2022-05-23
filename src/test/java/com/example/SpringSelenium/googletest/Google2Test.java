@@ -3,16 +3,14 @@ package com.example.SpringSelenium.googletest;
 import com.example.SpringSelenium.SpringBaseTestNGTest;
 import com.example.SpringSelenium.page.google.GooglePage;
 import com.example.SpringSelenium.util.ScreenShotUtil;
-import com.google.common.util.concurrent.Uninterruptibles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
-public class GoogleTest extends SpringBaseTestNGTest {
+public class Google2Test extends SpringBaseTestNGTest {
     @Autowired
     private GooglePage googlePage;
 
@@ -24,10 +22,8 @@ public class GoogleTest extends SpringBaseTestNGTest {
     public void googleTest() throws IOException {
         this.googlePage.goTo();
         Assert.assertTrue(this.googlePage.isAt());
-
-        Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
-
-        this.googlePage.getSearchComponent().search("enviroment ");
+        //Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
+        this.googlePage.getSearchComponent().search("selenium");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
         this.screenShotUtil.takeScreenShot();

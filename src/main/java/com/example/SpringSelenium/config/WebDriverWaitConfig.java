@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 
 @Lazy
 @Configuration
@@ -15,6 +16,7 @@ public class WebDriverWaitConfig {
     private int timeout;
 
     @Bean
+//    @Scope("prototype")
     public WebDriverWait webDriverWait(WebDriver driver) {
         WebDriverManager.chromedriver().setup();
         return new WebDriverWait(driver, this.timeout);
