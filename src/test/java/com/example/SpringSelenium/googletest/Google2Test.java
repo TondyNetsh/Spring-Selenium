@@ -34,5 +34,6 @@ public class Google2Test extends SpringBaseTestNGTest {
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
         this.screenShotUtil.takeScreenShot();
+        this.googlePage.close();
     }
 }
