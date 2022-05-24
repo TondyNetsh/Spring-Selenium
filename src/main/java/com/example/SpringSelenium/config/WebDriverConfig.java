@@ -1,5 +1,6 @@
 package com.example.SpringSelenium.config;
 
+import com.example.SpringSelenium.annotation.LazyConfigurations;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,8 +11,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.*;
 
-@Lazy
-@Configuration
+@LazyConfigurations
 @Profile("!remote")
 public class WebDriverConfig {
     @Value("${default.timeout:30}")
@@ -26,6 +26,7 @@ public class WebDriverConfig {
     }
 
     @Bean
+    @Scope("prototype")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver() {
         WebDriverManager.chromedriver().setup();

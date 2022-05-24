@@ -1,5 +1,6 @@
 package com.example.SpringSelenium.config;
 
+import com.example.SpringSelenium.annotation.LazyConfigurations;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,14 +10,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 
-@Lazy
-@Configuration
+@LazyConfigurations
 public class WebDriverWaitConfig {
     @Value("${default.timeout:30}")
     private int timeout;
 
     @Bean
-//    @Scope("prototype")
+    @Scope("prototype")
     public WebDriverWait webDriverWait(WebDriver driver) {
         WebDriverManager.chromedriver().setup();
         return new WebDriverWait(driver, this.timeout);

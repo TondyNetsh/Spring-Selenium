@@ -1,5 +1,6 @@
 package com.example.SpringSelenium.config;
 
+import com.example.SpringSelenium.annotation.LazyConfigurations;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,9 +13,8 @@ import org.springframework.context.annotation.*;
 
 import java.net.URL;
 
-@Lazy
-@Configuration
 @Profile("remote")
+@LazyConfigurations
 public class RemoteWebDriverConfig {
     @Value("${selenium.grid.url}")
     private URL url;
