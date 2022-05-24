@@ -25,9 +25,10 @@ public class Google1Test extends SpringBaseTestNGTest {
     private ScreenShotUtil screenShotUtil;
 
     @Test
-    public void googleTest() throws IOException {
+    public void googleTest() throws IOException, InterruptedException {
         this.googlePage.goTo();
         Assert.assertTrue(this.googlePage.isAt());
+        //Thread.sleep(5000);
         //Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
         this.googlePage.getSearchComponent().search("spring boot");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());

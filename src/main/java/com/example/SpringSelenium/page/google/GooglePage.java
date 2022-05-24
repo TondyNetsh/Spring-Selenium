@@ -20,7 +20,7 @@ public class GooglePage extends Base {
     private String url;
 
     public void goTo() {
-        this.driver.get(url);
+        this.driver.navigate().to(url);
     }
 
     public SearchComponent getSearchComponent() {

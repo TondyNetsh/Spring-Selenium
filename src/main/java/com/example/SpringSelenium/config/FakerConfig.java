@@ -1,9 +1,8 @@
 package com.example.SpringSelenium.config;
 
-import com.example.SpringSelenium.annotation.LazyConfigurations;
 import com.github.javafaker.Faker;
+import com.example.SpringSelenium.annotation.LazyConfigurations;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 @LazyConfigurations
 public class FakerConfig {

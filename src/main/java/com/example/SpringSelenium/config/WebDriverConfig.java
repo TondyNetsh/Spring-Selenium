@@ -11,12 +11,11 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.*;
 
-@LazyConfigurations
 @Profile("!remote")
+@LazyConfigurations
 public class WebDriverConfig {
     @Value("${default.timeout:30}")
     private int timeout;
-
 
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
@@ -26,7 +25,7 @@ public class WebDriverConfig {
     }
 
     @Bean
-    @Scope("prototype")
+    @Scope("broswerscope")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver() {
         WebDriverManager.chromedriver().setup();
