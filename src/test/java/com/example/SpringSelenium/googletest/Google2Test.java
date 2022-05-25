@@ -23,7 +23,7 @@ public class Google2Test extends SpringBaseTestNGTest {
 
     @Test
     public void googleTest() throws IOException, InterruptedException {
-/*        this.googlePage.goTo();
+        this.googlePage.goTo();
         Assert.assertTrue(this.googlePage.isAt());
         //Thread.sleep(5000);
         //Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
@@ -32,6 +32,5 @@ public class Google2Test extends SpringBaseTestNGTest {
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
         this.screenShotService.takeScreenShot();
         this.googlePage.close();
- */
     }
 }

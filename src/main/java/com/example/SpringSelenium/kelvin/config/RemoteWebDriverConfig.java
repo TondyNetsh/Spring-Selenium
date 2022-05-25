@@ -29,6 +29,4 @@ public class RemoteWebDriverConfig {
     public WebDriver remoteChromeDriver() {
         return new RemoteWebDriver(this.url, DesiredCapabilities.chrome());
     }
-
-
 }
