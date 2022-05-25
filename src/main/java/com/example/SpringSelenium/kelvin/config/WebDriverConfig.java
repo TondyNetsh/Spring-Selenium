@@ -18,7 +18,7 @@ public class WebDriverConfig {
     @Value("${default.timeout:60}")
     private int timeout;
 
-    @Bean
+    @Bean("firefoxDriver")
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefoxDriver() {
@@ -26,7 +26,7 @@ public class WebDriverConfig {
         return new FirefoxDriver();
     }
 
-    @Bean
+    @Bean("chromeDriver")
     @ThreadScopeBean
     @ConditionalOnMissingBean
     public WebDriver chromeDriver() {
