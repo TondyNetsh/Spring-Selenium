@@ -1,12 +1,11 @@
-package com.example.SpringSelenium.config;
+package com.example.SpringSelenium.kelvin.config;
 
-import com.example.SpringSelenium.annotation.LazyConfigurations;
+import com.example.SpringSelenium.kelvin.annotation.LazyConfigurations;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 
 @LazyConfigurations
 public class WebDriverWaitConfig {

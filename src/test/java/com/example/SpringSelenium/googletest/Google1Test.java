@@ -2,7 +2,7 @@ package com.example.SpringSelenium.googletest;
 
 import com.example.SpringSelenium.SpringBaseTestNGTest;
 import com.example.SpringSelenium.page.google.GooglePage;
-import com.example.SpringSelenium.util.ScreenShotUtil;
+import com.example.SpringSelenium.kelvin.service.ScreenshotService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,7 +22,7 @@ public class Google1Test extends SpringBaseTestNGTest {
 
     @Lazy
     @Autowired
-    private ScreenShotUtil screenShotUtil;
+    private ScreenshotService screenShotService;
 
     @Test
     public void googleTest() throws IOException, InterruptedException {
@@ -33,7 +33,7 @@ public class Google1Test extends SpringBaseTestNGTest {
         this.googlePage.getSearchComponent().search("spring boot");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenShot();
+        this.screenShotService.takeScreenShot();
         this.googlePage.close();
     }
 }

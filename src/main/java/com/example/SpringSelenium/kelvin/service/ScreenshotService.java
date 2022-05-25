@@ -1,4 +1,4 @@
-package com.example.SpringSelenium.util;
+package com.example.SpringSelenium.kelvin.service;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.OutputType;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
 import javax.annotation.PostConstruct;
@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 @Lazy
-@Component
-public class ScreenShotUtil {
+@Service
+public class ScreenshotService {
     @Autowired
     private ApplicationContext ctx;
 
@@ -26,17 +26,6 @@ public class ScreenShotUtil {
 
     @Autowired
     private Faker faker;
-
-    @PostConstruct
-    private void inti() {
-        for (int i = 0; i < 10; i++) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ie) {
-                ie.printStackTrace();
-            }
-        }
-    }
 
     public void takeScreenShot() throws IOException {
         File sourceFile = this.ctx.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);

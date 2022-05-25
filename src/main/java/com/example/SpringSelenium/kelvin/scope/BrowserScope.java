@@ -1,4 +1,4 @@
-package com.example.SpringSelenium.config;
+package com.example.SpringSelenium.kelvin.scope;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;

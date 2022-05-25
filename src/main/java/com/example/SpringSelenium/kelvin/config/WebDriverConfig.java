@@ -1,6 +1,7 @@
-package com.example.SpringSelenium.config;
+package com.example.SpringSelenium.kelvin.config;
 
-import com.example.SpringSelenium.annotation.LazyConfigurations;
+import com.example.SpringSelenium.kelvin.annotation.LazyConfigurations;
+import com.example.SpringSelenium.kelvin.annotation.ThreadScopeBean;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,18 +15,17 @@ import org.springframework.context.annotation.*;
 @Profile("!remote")
 @LazyConfigurations
 public class WebDriverConfig {
-    @Value("${default.timeout:30}")
+    @Value("${default.timeout:60}")
     private int timeout;
 
-    @Bean
+    @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
-    public WebDriver firefox() {
+    public WebDriver firefoxDriver() {
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
     }
 
-    @Bean
-    @Scope("broswerscope")
+    @ThreadScopeBean
     @ConditionalOnMissingBean
     public WebDriver chromeDriver() {
         WebDriverManager.chromedriver().setup();

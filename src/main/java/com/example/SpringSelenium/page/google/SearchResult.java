@@ -1,12 +1,9 @@
 package com.example.SpringSelenium.page.google;
 
-import com.example.SpringSelenium.annotation.PageFragment;
+import com.example.SpringSelenium.kelvin.annotation.PageFragment;
 import com.example.SpringSelenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 

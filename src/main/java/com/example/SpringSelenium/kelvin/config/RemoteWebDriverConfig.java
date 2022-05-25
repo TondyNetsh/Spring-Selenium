@@ -1,11 +1,10 @@
-package com.example.SpringSelenium.config;
+package com.example.SpringSelenium.kelvin.config;
 
-import com.example.SpringSelenium.annotation.LazyConfigurations;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.example.SpringSelenium.kelvin.annotation.LazyConfigurations;
+import com.example.SpringSelenium.kelvin.annotation.ThreadScopeBean;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -19,13 +18,13 @@ public class RemoteWebDriverConfig {
     @Value("${selenium.grid.url}")
     private URL url;
 
-    @Bean
+    @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver remoteFirefoxDriver() {
         return new RemoteWebDriver(this.url, DesiredCapabilities.firefox());
     }
 
-    @Bean
+    @ThreadScopeBean
     @ConditionalOnMissingBean
     public WebDriver remoteChromeDriver() {
         return new RemoteWebDriver(this.url, DesiredCapabilities.chrome());
