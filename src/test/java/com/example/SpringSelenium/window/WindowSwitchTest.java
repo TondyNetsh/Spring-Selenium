@@ -1,7 +1,6 @@
 package com.example.SpringSelenium.window;
 
 import com.example.SpringSelenium.SpringBaseTestNGTest;
-import com.example.SpringSelenium.kelvin.service.WindowSwitchService;
 import com.example.SpringSelenium.page.window.MainPage;
 import com.example.SpringSelenium.page.window.PageA;
 import com.example.SpringSelenium.page.window.PageB;

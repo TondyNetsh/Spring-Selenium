@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 @Window("Page A")
 public class PageA extends Base {
-    @FindBy(css = "area")
+    @FindBy(css = "#area")
     private WebElement textArea;
 
     public void addToArea(final String msg) {
