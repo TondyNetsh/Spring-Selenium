@@ -11,7 +11,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-@TestPropertySource(properties = "browser=chrome")
+@TestPropertySource(properties = "browser=firefox")
 public class WindowSwitchTest extends SpringBaseTestNGTest {
     @Autowired
     private MainPage mainPage;
