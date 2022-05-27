@@ -1,13 +1,14 @@
 package com.example.SpringSelenium.page.window;
 
 import com.example.SpringSelenium.kelvin.annotation.Page;
+import com.example.SpringSelenium.kelvin.annotation.Window;
 import com.example.SpringSelenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@Page
+@Window("Page A")
 public class PageA extends Base {
-    @FindBy(css = "#area")
+    @FindBy(css = "area")
     private WebElement textArea;
 
     public void addToArea(final String msg) {
