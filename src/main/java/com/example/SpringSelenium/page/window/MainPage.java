@@ -1,11 +1,12 @@
 package com.example.SpringSelenium.page.window;
 
+import com.example.SpringSelenium.kelvin.annotation.Page;
 import com.example.SpringSelenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-
+@Page
 public class MainPage extends Base {
     @FindBy(tagName = "a")
     private List<WebElement> links;

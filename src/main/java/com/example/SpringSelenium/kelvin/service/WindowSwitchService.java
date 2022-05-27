@@ -13,10 +13,7 @@ public class WindowSwitchService {
     public void switchByTitle(final String title) {
         WebDriver driver = this.context.getBean(WebDriver.class);
         driver.getWindowHandles().stream().map(handle -> driver.switchTo().window(handle).getTitle())
-                .filter(t -> t.startsWith(title)).findFirst()
-                .orElseThrow(() -> {
-                    throw new RuntimeException("No Such Window");
-                });
+                .filter(t -> t.startsWith(title)).findFirst();
     }
 
     public void switchByIndex(final int index) {

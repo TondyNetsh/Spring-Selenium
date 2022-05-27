@@ -5,9 +5,10 @@ import com.example.SpringSelenium.kelvin.service.WindowSwitchService;
 import com.example.SpringSelenium.page.window.MainPage;
 import com.example.SpringSelenium.page.window.PageA;
 import com.example.SpringSelenium.page.window.PageB;
-import org.junit.BeforeClass;
+import com.example.SpringSelenium.page.window.PageC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.TestPropertySource;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 @TestPropertySource(properties = "browser=chrome")
@@ -22,6 +23,9 @@ public class WindowSwitchTest extends SpringBaseTestNGTest {
     private PageB pageB;
 
     @Autowired
+    private PageC pageC;
+
+    @Autowired
     private WindowSwitchService switchService;
 
     @BeforeClass
@@ -32,10 +36,17 @@ public class WindowSwitchTest extends SpringBaseTestNGTest {
     }
 
     @Test
-    public void switchTest() {
+    public void switchTest() throws InterruptedException {
         this.switchService.switchByTitle("Page A");
-        this.pageA.addToArea("Hi page A");
+        Thread.sleep(3000);
+        this.pageA.addToArea("Welcome to Page A");
+        Thread.sleep(3000);
         this.switchService.switchByIndex(2);
-        this.pageA.addToArea("Hello Page B");
+        Thread.sleep(3000);
+        this.pageA.addToArea("This is Page B");
+        Thread.sleep(3000);
+        this.switchService.switchByTitle("Page C");
+        Thread.sleep(3000);
+        this.pageC.addToArea("The third Page C");
     }
 }

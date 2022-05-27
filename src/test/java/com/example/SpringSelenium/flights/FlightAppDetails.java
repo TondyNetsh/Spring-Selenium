@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@PropertySource("language/en.properties")
+@PropertySource("language/${app.locale}.properties")
 public class FlightAppDetails {
     @Value("${flight.app.url}")
     private String url;
