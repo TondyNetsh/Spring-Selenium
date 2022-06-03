@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Page
 public class VisaRegistrationPage extends Base {
@@ -48,6 +49,7 @@ public class VisaRegistrationPage extends Base {
 
     public void goTo() {
         this.driver.get("https://vins-udemy.s3.amazonaws.com/sb/visa/udemy-visa.html");
+        this.driver.manage().window().maximize();
     }
 
     public void setNames(String firstName, String lastName) {
@@ -63,7 +65,8 @@ public class VisaRegistrationPage extends Base {
     public void setBirthDate(LocalDate localDate) {
         new Select(this.year).selectByVisibleText(String.valueOf(localDate.getYear()));
         new Select(this.day).selectByVisibleText(String.valueOf(localDate.getDayOfMonth()));
-        new Select(this.month).selectByVisibleText(String.valueOf(localDate.getMonth()));
+        //new Select(this.month).selectByVisibleText(String.valueOf(localDate.getMonth()));
+        new Select(this.month).selectByVisibleText("May");
     }
 
     public void setContactDetails(String email, String phone) {
@@ -72,7 +75,7 @@ public class VisaRegistrationPage extends Base {
     }
 
     public void setComments(String comments) {
-        this.comments.sendKeys(comments);
+        this.comments.sendKeys(Objects.toString(comments,""));
     }
 
     public void submit() {

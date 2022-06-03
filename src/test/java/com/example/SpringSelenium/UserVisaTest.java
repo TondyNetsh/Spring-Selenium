@@ -16,7 +16,7 @@ public class UserVisaTest extends SpringBaseTestNGTest {
     private UserRepository repository;
 
     @Test
-    public void visaTest() {
+    public void visaTest() throws InterruptedException {
         System.out.println(this.repository.findAll().size());
         this.repository.findById(85).ifPresent(u -> System.out.println(u.getFirstName()));
         List<User> users = this.repository.findAll().stream().limit(3).collect(Collectors.toList());
@@ -24,10 +24,15 @@ public class UserVisaTest extends SpringBaseTestNGTest {
         for(User u : users) {
             this.registrationPage.goTo();
             this.registrationPage.setNames(u.getFirstName(), u.getLastName());
+            Thread.sleep(2000);
             this.registrationPage.setFromCountryFromAndTo(u.getFromCountry(),u.getToCountry());
+            Thread.sleep(2000);
             this.registrationPage.setBirthDate(u.getDob().toLocalDate());
+            Thread.sleep(2000);
             this.registrationPage.setContactDetails(u.getEmail(),u.getPhone());
+            Thread.sleep(2000);
             this.registrationPage.setComments(u.getComments());
+            Thread.sleep(2000);
             this.registrationPage.submit();
 
             System.out.println(this.registrationPage.getConfirmationNumber());
