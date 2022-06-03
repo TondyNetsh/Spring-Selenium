@@ -28,7 +28,7 @@ public class VisaRegistrationPage extends Base {
     @FindBy(id = "input_24_day")
     private WebElement day;
 
-    @FindBy(id = "input_24_day")
+    @FindBy(id = "input_24_year")
     private WebElement year;
 
     @FindBy(id = "input_6")
