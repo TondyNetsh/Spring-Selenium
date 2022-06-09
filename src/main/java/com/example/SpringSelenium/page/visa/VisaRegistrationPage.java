@@ -23,14 +23,14 @@ public class VisaRegistrationPage extends Base {
     @FindBy(id = "input_47")
     private WebElement toCountry;
 
-    @FindBy(id = "input_24_month")
-    private WebElement month;
-
     @FindBy(id = "input_24_day")
     private WebElement day;
 
     @FindBy(id = "input_24_year")
     private WebElement year;
+
+    @FindBy(id = "input_24_month")
+    private WebElement month;
 
     @FindBy(id = "input_6")
     private WebElement email;
@@ -65,8 +65,7 @@ public class VisaRegistrationPage extends Base {
     public void setBirthDate(LocalDate localDate) {
         new Select(this.year).selectByVisibleText(String.valueOf(localDate.getYear()));
         new Select(this.day).selectByVisibleText(String.valueOf(localDate.getDayOfMonth()));
-        //new Select(this.month).selectByVisibleText(String.valueOf(localDate.getMonth()));
-        new Select(this.month).selectByVisibleText("May");
+        new Select(this.month).selectByValue(String.valueOf(localDate.getMonth()));
     }
 
     public void setContactDetails(String email, String phone) {
