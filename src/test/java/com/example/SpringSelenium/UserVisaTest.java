@@ -4,7 +4,11 @@ import com.example.SpringSelenium.entity.User;
 import com.example.SpringSelenium.page.visa.VisaRegistrationPage;
 import com.example.SpringSelenium.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.ITestContext;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +23,7 @@ public class UserVisaTest extends SpringBaseTestNGTest {
     public void visaTest() throws InterruptedException {
         System.out.println(this.repository.findAll().size());
         this.repository.findById(85).ifPresent(u -> System.out.println(u.getFirstName()));
-        List<User> users = this.repository.findAll().stream().limit(3).collect(Collectors.toList());
+        List<User> users = this.repository.findByDobBetween(Date.valueOf("1995-01-01"), Date.valueOf("1999-01-01")).stream().limit(3).collect(Collectors.toList());
 
         for(User u : users) {
             this.registrationPage.goTo();
@@ -37,5 +41,13 @@ public class UserVisaTest extends SpringBaseTestNGTest {
 
             System.out.println(this.registrationPage.getConfirmationNumber());
         }
+    }
+
+    @DataProvider
+    public Object[] getData(ITestContext context) {
+        return this.repository.findByDobBetween(
+                Date.valueOf(context.getCurrentXmlTest().getParameter("dobFrom")),
+                Date.valueOf(context.getCurrentXmlTest().getParameter("dobTo"))
+        ).stream().limit(3).toArray();
     }
 }
