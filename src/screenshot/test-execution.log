@@ -1,0 +1,31 @@
+2022-06-13 10:31:32.878  INFO 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Starting UserVisaTest using Java 17.0.3 on CMDQ1-Vostro3500 with PID 1484 (C:\Users\CMDQ1\IdeaProjects\Spring-Selenium\target\test-classes started by CMDQ1 in C:\Users\CMDQ1\IdeaProjects\Spring-Selenium)
+2022-06-13 10:31:32.879  INFO 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : No active profile set, falling back to 1 default profile: "default"
+2022-06-13 10:31:35.512  INFO 1484 --- [TestNG-tests-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-13 10:31:35.605  INFO 1484 --- [TestNG-tests-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 1 JPA repository interfaces.
+2022-06-13 10:31:37.083  INFO 1484 --- [TestNG-tests-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-13 10:31:37.612  INFO 1484 --- [TestNG-tests-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-13 10:31:37.773  INFO 1484 --- [TestNG-tests-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-13 10:31:37.833  INFO 1484 --- [TestNG-tests-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-06-13 10:31:38.042  INFO 1484 --- [TestNG-tests-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-13 10:31:38.210  INFO 1484 --- [TestNG-tests-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-13 10:31:38.819  INFO 1484 --- [TestNG-tests-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-13 10:31:38.829  INFO 1484 --- [TestNG-tests-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-13 10:31:39.847  INFO 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Started UserVisaTest in 7.675 seconds (JVM running for 19.895)
+2022-06-13 10:31:40.805  INFO 1484 --- [TestNG-tests-1] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 102.0.5005.61 (since Google Chrome 102 is installed in your machine)
+2022-06-13 10:31:40.817  INFO 1484 --- [TestNG-tests-1] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\CMDQ1\.m2\repository\webdriver\chromedriver\win32\102.0.5005.61\chromedriver.exe
+2022-06-13 10:32:00.274  INFO 1484 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-06-13 10:32:00.327  INFO 1484 --- [TestNG-tests-1] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 102.0.5005.61 (since Google Chrome 102 is installed in your machine)
+2022-06-13 10:32:00.331  INFO 1484 --- [TestNG-tests-1] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\CMDQ1\.m2\repository\webdriver\chromedriver\win32\102.0.5005.61\chromedriver.exe
+2022-06-13 10:32:12.159  INFO 1484 --- [TestNG-tests-1] c.e.S.page.visa.VisaRegistrationPage     : Getting names : Sixta
+2022-06-13 10:32:26.040  INFO 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Request confirmation number # INFO: 8092251
+2022-06-13 10:32:26.079  WARN 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Request confirmation number # WARN: 8092251
+2022-06-13 10:32:27.673  INFO 1484 --- [TestNG-tests-1] c.e.S.page.visa.VisaRegistrationPage     : Getting names : Darren
+2022-06-13 10:32:35.003  INFO 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Request confirmation number # INFO: 1433062
+2022-06-13 10:32:35.042  WARN 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Request confirmation number # WARN: 1433062
+2022-06-13 10:32:38.802  INFO 1484 --- [TestNG-tests-1] c.e.S.page.visa.VisaRegistrationPage     : Getting names : Edward
+2022-06-13 10:32:53.012  INFO 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Request confirmation number # INFO: 4218475
+2022-06-13 10:32:53.047  WARN 1484 --- [TestNG-tests-1] com.example.SpringSelenium.UserVisaTest  : Request confirmation number # WARN: 4218475
+2022-06-13 10:32:53.178  INFO 1484 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-13 10:32:53.179  INFO 1484 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-13 10:32:53.252  INFO 1484 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-13 10:32:53.575  INFO 1484 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

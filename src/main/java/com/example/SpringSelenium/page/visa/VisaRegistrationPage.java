@@ -5,12 +5,15 @@ import com.example.SpringSelenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Page
 public class VisaRegistrationPage extends Base {
+    private static final Logger logger = LoggerFactory.getLogger(VisaRegistrationPage.class);
     @FindBy(id = "first_4")
     private WebElement firstName;
 
@@ -53,6 +56,7 @@ public class VisaRegistrationPage extends Base {
     }
 
     public void setNames(String firstName, String lastName) {
+        logger.info("Getting names : " + firstName);
         this.firstName.sendKeys(firstName);
         this.lastName.sendKeys(lastName);
     }

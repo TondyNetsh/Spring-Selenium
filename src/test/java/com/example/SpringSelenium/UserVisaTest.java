@@ -3,6 +3,8 @@ package com.example.SpringSelenium;
 import com.example.SpringSelenium.entity.User;
 import com.example.SpringSelenium.page.visa.VisaRegistrationPage;
 import com.example.SpringSelenium.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
@@ -13,6 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserVisaTest extends SpringBaseTestNGTest {
+    private static final Logger logger = LoggerFactory.getLogger(UserVisaTest.class);
     @Autowired
     private VisaRegistrationPage registrationPage;
 
@@ -39,7 +42,9 @@ public class UserVisaTest extends SpringBaseTestNGTest {
             Thread.sleep(500);
             this.registrationPage.submit();
 
-            System.out.println(this.registrationPage.getConfirmationNumber());
+            logger.info("Request confirmation number # INFO: " + this.registrationPage.getConfirmationNumber());
+            logger.warn("Request confirmation number # WARN: " + this.registrationPage.getConfirmationNumber());
+            //System.out.println(this.registrationPage.getConfirmationNumber());
         }
     }
 
